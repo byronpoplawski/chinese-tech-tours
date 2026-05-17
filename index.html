@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>China Tech Tour — Explore the Future of Tech in China</title>
+  <meta name="description" content="A boutique 10-day immersive tour through Hong Kong, Shenzhen, and Shanghai for curious tech professionals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">China Tech Tour</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="travel-notes.html">Travel Notes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="eyebrow">A boutique tour for tech professionals</span>
+      <h1>Explore the Future of Tech in China.</h1>
+      <p class="hero-lead">
+        China Tech Tour runs small-group, ten-day immersions through Hong Kong, Shenzhen, and Shanghai — combining
+        company visits, expert-led talks, and food tours. Built for curious American technologists who want to see what's
+        next, in person.
+      </p>
+      <a href="tours.html" class="btn">View the tour</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Featured tour</span>
+          <h2>China Tech Tour — Fall 2026</h2>
+        </div>
+        <p>Ten days. Three cities. Inside the world's fastest-moving tech ecosystem.</p>
+      </div>
+
+      <div class="featured">
+        <div class="featured-content">
+          <span class="tag">10 Days · Early Bird</span>
+          <h3 style="font-size: 1.5rem; margin-top: 1rem;">Hong Kong → Shenzhen → Shanghai</h3>
+          <p style="margin-top: 1rem;">
+            Visit hardware factories in Shenzhen, AI labs in Shanghai, and meet founders building the next generation
+            of consumer tech. Evenings on the night markets and rooftop bars. A small group of fifteen.
+          </p>
+          <ul class="featured-list">
+            <li><span class="key">Duration</span><span class="val">10 days</span></li>
+            <li><span class="key">Route</span><span class="val">HK · SZ · SH</span></li>
+            <li><span class="key">Group size</span><span class="val">15 travelers</span></li>
+            <li><span class="key">Early bird</span><span class="val">$3,500</span></li>
+          </ul>
+          <a href="contact.html" class="btn">I'm interested</a>
+        </div>
+        <div class="about-photo" aria-hidden="true">
+          Photo: Shanghai skyline at dusk
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ig-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">From the road</span>
+          <h2>Recent travel videos</h2>
+        </div>
+        <p>Follow @izzypop_adventures on Instagram for dispatches from China, Hong Kong, and beyond.</p>
+      </div>
+
+      <div class="ig-grid">
+        <a href="https://instagram.com/izzypop_adventures" class="ig-tile" target="_blank" rel="noopener">Shenzhen night market reel</a>
+        <a href="https://instagram.com/izzypop_adventures" class="ig-tile" target="_blank" rel="noopener">Inside the Huaqiangbei electronics market</a>
+        <a href="https://instagram.com/izzypop_adventures" class="ig-tile" target="_blank" rel="noopener">Shanghai breakfast spots</a>
+        <a href="https://instagram.com/izzypop_adventures" class="ig-tile" target="_blank" rel="noopener">Crossing Lo Wu to Shenzhen</a>
+      </div>
+
+      <div class="ig-follow">
+        <a href="https://instagram.com/izzypop_adventures" target="_blank" rel="noopener" class="btn btn-outline">
+          Follow @izzypop_adventures
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="capture">
+        <h2>Notify me when spots open</h2>
+        <p>Drop your email — we'll let you know when the next cohort opens for signup.</p>
+        <form
+          class="capture-form"
+          name="notify"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thank-you.html"
+        >
+          <input type="hidden" name="form-name" value="notify" />
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <input type="email" name="email" placeholder="you@example.com" required />
+          <button type="submit" class="btn">Notify me</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">China Tech Tour</div>
+          <p class="footer-tag">Small-group tech immersions through Hong Kong, Shenzhen, and Shanghai.</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:chinesetechtours@gmail.com">chinesetechtours@gmail.com</a>
+          <a href="https://instagram.com/izzypop_adventures" target="_blank" rel="noopener">@izzypop_adventures</a>
+          <a href="contact.html">Register your interest</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 China Tech Tour. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

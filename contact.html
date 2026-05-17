@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — China Tech Tour</title>
+  <meta name="description" content="Register your interest in a China Tech Tour." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">China Tech Tour</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="travel-notes.html">Travel Notes</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="container">
+      <span class="eyebrow">Interest form</span>
+      <h1>Tell us about you.</h1>
+      <p>
+        Spots are limited and tours fill up. Drop us a note — we'll reply personally with the next cohort dates and
+        any questions you might have.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <form
+        class="form"
+        name="interest"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/thank-you.html"
+      >
+        <input type="hidden" name="form-name" value="interest" />
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <div class="form-row">
+          <label for="name">Name <span class="req">*</span></label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="tour">Which tour are you interested in? <span class="req">*</span></label>
+          <select id="tour" name="tour" required>
+            <option value="">Select a tour</option>
+            <option value="china-tech-tour">China Tech Tour — Hong Kong, Shenzhen, Shanghai</option>
+            <option value="future-tour">A future tour (please mention which)</option>
+            <option value="just-curious">Just curious — keep me posted</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="referral">How did you hear about us?</label>
+          <select id="referral" name="referral">
+            <option value="">Select one</option>
+            <option value="instagram">Instagram</option>
+            <option value="friend">A friend</option>
+            <option value="twitter">Twitter / X</option>
+            <option value="search">Google search</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Anything else? (optional)</label>
+          <textarea id="message" name="message" placeholder="Questions, dates that work for you, dietary needs, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send</button>
+      </form>
+
+      <p style="margin-top: 1.5rem; color: var(--muted); font-size: 0.9rem;">
+        Or email us directly at <a href="mailto:chinesetechtours@gmail.com">chinesetechtours@gmail.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">China Tech Tour</div>
+          <p class="footer-tag">Small-group tech immersions through Hong Kong, Shenzhen, and Shanghai.</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:chinesetechtours@gmail.com">chinesetechtours@gmail.com</a>
+          <a href="https://instagram.com/izzypop_adventures" target="_blank" rel="noopener">@izzypop_adventures</a>
+          <a href="contact.html">Register your interest</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 China Tech Tour. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Pre-select tour if passed via query string (e.g. ?tour=china-tech-tour)
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var tour = params.get('tour');
+      if (tour) {
+        var sel = document.getElementById('tour');
+        if (sel) {
+          for (var i = 0; i < sel.options.length; i++) {
+            if (sel.options[i].value === tour) {
+              sel.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

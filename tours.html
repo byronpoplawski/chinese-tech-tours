@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tours — China Tech Tour</title>
+  <meta name="description" content="A ten-day immersive tech tour through Hong Kong, Shenzhen, and Shanghai." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">China Tech Tour</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html" class="active">Tours</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="travel-notes.html">Travel Notes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="container">
+      <span class="eyebrow">Tours</span>
+      <h1>Where curiosity meets the future.</h1>
+      <p>
+        We run one tour, exceptionally well. Ten days through three cities — designed for tech professionals who want
+        a real, unfiltered look at China's innovation ecosystem.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="tour-grid">
+        <article class="tour-card">
+          <span class="tag">Flagship</span>
+          <h3>China Tech Tour</h3>
+          <div class="tour-route">Hong Kong → Shenzhen → Shanghai</div>
+
+          <div class="tour-meta">
+            <div class="tour-meta-item">
+              <span class="label">Duration</span>
+              <span class="value">10 days</span>
+            </div>
+            <div class="tour-meta-item">
+              <span class="label">Early bird</span>
+              <span class="value">$3,500</span>
+            </div>
+            <div class="tour-meta-item">
+              <span class="label">Group</span>
+              <span class="value">15 max</span>
+            </div>
+          </div>
+
+          <p>
+            A small-group immersion through three of Asia's most consequential tech hubs. Visit hardware factories
+            and AI labs, meet founders and operators, eat your way through night markets, and end each day with
+            people who share your curiosity. Company visits, expert-led talks, and food tours, all in one trip.
+          </p>
+
+          <a href="contact.html?tour=china-tech-tour" class="btn">I'm interested</a>
+        </article>
+
+        <article class="tour-card" style="background: var(--off-white); border-style: dashed;">
+          <span class="tag">Coming Soon</span>
+          <h3 style="color: var(--muted);">More tours in the works</h3>
+          <div class="tour-route">Tokyo · Seoul · Taipei — TBD</div>
+          <p style="margin-top: 1.5rem;">
+            We're shaping a few additional itineraries for 2027. Sign up to be the first to know when they open.
+          </p>
+          <a href="contact.html" class="btn btn-outline">Notify me</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">China Tech Tour</div>
+          <p class="footer-tag">Small-group tech immersions through Hong Kong, Shenzhen, and Shanghai.</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:chinesetechtours@gmail.com">chinesetechtours@gmail.com</a>
+          <a href="https://instagram.com/izzypop_adventures" target="_blank" rel="noopener">@izzypop_adventures</a>
+          <a href="contact.html">Register your interest</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 China Tech Tour. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
