@@ -1,0 +1,1 @@
+import{j as o,L as t}from"./index-BsOJ_lTr.js";const n=()=>o.jsxs("div",{style:{textAlign:"center",padding:"4rem 2rem"},children:[o.jsx("p",{style:{color:"#6b6860"},children:"Article not found."}),o.jsx(t,{to:"/travel-notes",style:{color:"#2563EB",textDecoration:"none",marginTop:"1rem",display:"inline-block"},children:"← Back to Travel Notes"})]});export{n as notFoundComponent};
