@@ -526,11 +526,6 @@ img { max-width: 100%; display: block; }
   object-fit: cover;
 }
 
-.ig-follow {
-  text-align: center;
-  margin-top: 2rem;
-}
-
 /* Email capture */
 .capture {
   background: #fff;
