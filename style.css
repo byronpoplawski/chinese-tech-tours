@@ -476,9 +476,17 @@ img { max-width: 100%; display: block; }
 
 .ig-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
+  justify-items: center;
+}
+
+.ig-grid .instagram-media {
+  margin: 0 !important;
+  max-width: 100%;
+  min-width: 0 !important;
+  width: 100%;
 }
 
 .ig-tile {
