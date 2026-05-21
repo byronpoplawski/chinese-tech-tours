@@ -247,6 +247,136 @@ img { max-width: 100%; display: block; }
   align-self: flex-start;
 }
 
+/* Flagship tour card — expanded layout */
+.tour-card-flagship {
+  padding: 2.5rem;
+}
+
+.tour-grid-secondary {
+  margin-top: 1.5rem;
+}
+
+.tour-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.tour-section-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+.itinerary {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.itinerary-day-head {
+  margin-bottom: 0.75rem;
+}
+
+.itinerary-day h4 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin: 0 0 0.2rem;
+  line-height: 1.2;
+}
+
+.itinerary-day-sub {
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.itinerary-day ul,
+.include-col ul,
+.good-to-know-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.itinerary-day ul li,
+.include-col ul li,
+.good-to-know-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.6rem;
+  line-height: 1.55;
+}
+
+.itinerary-day ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.include-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+}
+
+.include-col h4 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin: 0 0 1rem;
+}
+
+.include-col-yes ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--blue);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.include-col-no ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.good-to-know-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--blue);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.tour-card-flagship .btn {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .tour-card-flagship { padding: 1.75rem; }
+  .itinerary-day h4 { font-size: 1.2rem; }
+}
+
 /* Featured tour (home) */
 .featured {
   background: #fff;
