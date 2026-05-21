@@ -311,8 +311,7 @@ img { max-width: 100%; display: block; }
 }
 
 .itinerary-day ul li,
-.include-col ul li,
-.good-to-know-list li {
+.include-col ul li {
   position: relative;
   padding-left: 1.5rem;
   color: var(--ink-soft);
@@ -364,14 +363,31 @@ img { max-width: 100%; display: block; }
   line-height: 1.55;
 }
 
-.good-to-know-list li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--blue);
-  font-weight: 700;
+.good-to-know-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.good-to-know-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  color: var(--muted);
   line-height: 1.55;
+}
+
+.good-to-know-list li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.gtk-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--ink);
+  margin-top: 0.2rem;
 }
 
 .tour-card-flagship .btn {
