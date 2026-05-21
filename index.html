@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <svg id="planeStage" aria-hidden="true" focusable="false">
+    <path id="planePath" fill="none" stroke="none" />
+    <g id="planeShape">
+      <g transform="translate(-12 -12)">
+        <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="#000" />
+      </g>
+    </g>
+  </svg>
+
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">China Tech Tours</a>
@@ -100,6 +109,72 @@
         ></blockquote>
       </div>
       <script async src="//www.instagram.com/embed.js"></script>
+      <script>
+        (function () {
+          var stage = document.getElementById('planeStage');
+          var pathEl = document.getElementById('planePath');
+          var shape = document.getElementById('planeShape');
+          if (!stage || !pathEl || !shape) return;
+          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+          function run() {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            stage.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+
+            var d =
+              'M ' + (-60) + ' ' + (h + 60) +
+              ' Q ' + (w * 0.5) + ' ' + (h * 0.12) +
+              ' ' + (w + 60) + ' ' + (-60);
+            pathEl.setAttribute('d', d);
+
+            var totalLength = pathEl.getTotalLength();
+            var duration = 5000;
+            var scale = 32 / 24;
+            var start = null;
+
+            function easeInOut(t) {
+              return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+            }
+
+            function tick(now) {
+              if (start === null) start = now;
+              var rawT = Math.min((now - start) / duration, 1);
+              var t = easeInOut(rawT);
+              var dist = t * totalLength;
+              var pt = pathEl.getPointAtLength(dist);
+              var ahead = pathEl.getPointAtLength(Math.min(dist + 1, totalLength));
+              var angle = Math.atan2(ahead.y - pt.y, ahead.x - pt.x) * 180 / Math.PI + 90;
+
+              var fade = 0.18;
+              var opacity;
+              if (rawT < fade) opacity = rawT / fade;
+              else if (rawT > 1 - fade) opacity = (1 - rawT) / fade;
+              else opacity = 1;
+
+              shape.setAttribute(
+                'transform',
+                'translate(' + pt.x + ' ' + pt.y + ') rotate(' + angle + ') scale(' + scale + ')'
+              );
+              stage.style.opacity = opacity;
+
+              if (rawT < 1) {
+                requestAnimationFrame(tick);
+              } else {
+                stage.style.opacity = 0;
+              }
+            }
+
+            requestAnimationFrame(tick);
+          }
+
+          if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            run();
+          } else {
+            window.addEventListener('DOMContentLoaded', run);
+          }
+        })();
+      </script>
 
       <div class="ig-follow">
         <a href="https://instagram.com/izzypop_adventures" target="_blank" rel="noopener" class="btn btn-outline">

@@ -60,6 +60,18 @@ img { max-width: 100%; display: block; }
   padding: 3rem 0;
 }
 
+/* Plane flyover (homepage) */
+#planeStage {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  overflow: visible;
+}
+
 /* Navigation */
 .nav {
   position: sticky;
