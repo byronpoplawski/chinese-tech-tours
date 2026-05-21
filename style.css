@@ -262,6 +262,12 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid var(--border);
 }
 
+.tour-meta + .tour-section {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 .tour-section-label {
   display: block;
   font-size: 0.75rem;
