@@ -27,16 +27,15 @@
 
   <header class="page-head">
     <div class="container">
-      <span class="eyebrow">Interest form</span>
-      <h1>Tell us about you.</h1>
+      <span class="eyebrow">Contact</span>
+      <h1>Contact us.</h1>
       <p>
-        Spots are limited and tours fill up. Drop us a note — we'll reply personally with the next cohort dates and
-        any questions you might have.
+        Spots are limited and tours fill up. Drop us a note — we'll reply personally.
       </p>
     </div>
   </header>
 
-  <section class="section">
+  <section class="section" style="padding-top: 2.5rem;">
     <div class="container">
       <form
         class="form"
@@ -60,30 +59,8 @@
         </div>
 
         <div class="form-row">
-          <label for="tour">Which tour are you interested in? <span class="req">*</span></label>
-          <select id="tour" name="tour" required>
-            <option value="">Select a tour</option>
-            <option value="china-tech-tour">China Tech Tours — Hong Kong, Shenzhen, Shanghai</option>
-            <option value="future-tour">A future tour (please mention which)</option>
-            <option value="just-curious">Just curious — keep me posted</option>
-          </select>
-        </div>
-
-        <div class="form-row">
-          <label for="referral">How did you hear about us?</label>
-          <select id="referral" name="referral">
-            <option value="">Select one</option>
-            <option value="instagram">Instagram</option>
-            <option value="friend">A friend</option>
-            <option value="twitter">Twitter / X</option>
-            <option value="search">Google search</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div class="form-row">
-          <label for="message">Anything else? (optional)</label>
-          <textarea id="message" name="message" placeholder="Questions, dates that work for you, dietary needs, etc."></textarea>
+          <label for="question">Question</label>
+          <textarea id="question" name="question"></textarea>
         </div>
 
         <button type="submit" class="btn">Send</button>
@@ -111,23 +88,5 @@
     </div>
   </footer>
 
-  <script>
-    // Pre-select tour if passed via query string (e.g. ?tour=china-tech-tour)
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var tour = params.get('tour');
-      if (tour) {
-        var sel = document.getElementById('tour');
-        if (sel) {
-          for (var i = 0; i < sel.options.length; i++) {
-            if (sel.options[i].value === tour) {
-              sel.selectedIndex = i;
-              break;
-            }
-          }
-        }
-      }
-    })();
-  </script>
 </body>
 </html>
