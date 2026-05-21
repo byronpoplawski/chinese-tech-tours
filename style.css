@@ -119,7 +119,7 @@ img { max-width: 100%; display: block; }
 
 /* Hero */
 .hero {
-  padding: 6rem 0 5rem;
+  padding: 6rem 0 2rem;
   text-align: left;
 }
 
@@ -769,7 +769,7 @@ img { max-width: 100%; display: block; }
 
   .about-photo { max-width: 280px; aspect-ratio: 1 / 1; }
 
-  .hero { padding: 4rem 0 3rem; }
+  .hero { padding: 4rem 0 1.5rem; }
 
   .section { padding: 3.5rem 0; }
 }
