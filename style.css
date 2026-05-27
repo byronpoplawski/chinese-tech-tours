@@ -385,6 +385,16 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1rem;
 }
 
+.itinerary-day-photo {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  margin-bottom: 1.125rem;
+}
+
 .itinerary-day ul,
 .include-col ul,
 .good-to-know-list {
@@ -948,6 +958,10 @@ img { max-width: 100%; display: block; }
 
   .itinerary-day-trigger h4 {
     font-size: 1.35rem;
+  }
+
+  .itinerary-day-photo {
+    height: 280px;
   }
 
   .include-grid {
