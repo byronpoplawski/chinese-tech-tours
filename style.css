@@ -249,19 +249,6 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1.25rem;
 }
 
-.tour-map {
-  margin: 0 0 1.5rem;
-  display: flex;
-  justify-content: center;
-}
-
-.tour-map img {
-  display: block;
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-}
-
 .tour-meta {
   display: flex;
   flex-wrap: wrap;
