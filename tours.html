@@ -69,40 +69,61 @@
         <div class="tour-section">
           <span class="tour-section-label">Itinerary</span>
           <div class="itinerary">
-            <div class="itinerary-day">
-              <div class="itinerary-day-head">
+            <div class="itinerary-day" data-open="false">
+              <button class="itinerary-day-trigger" type="button" aria-expanded="false">
                 <h4>Days 1–3 · Hong Kong</h4>
-                <span class="itinerary-day-sub">Gateway to China</span>
+                <svg class="itinerary-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                  <path d="M9 6 L15 12 L9 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="itinerary-day-panel">
+                <div class="itinerary-day-panel-inner">
+                  <span class="itinerary-day-sub">Gateway to China</span>
+                  <ul>
+                    <li><strong>Welcome Dinner</strong> — expert talk: <em>Why China, Why Now</em>, featuring a China analyst from Gavekal Dragonomics</li>
+                    <li><strong>Explore the City</strong> — Dragon's Back coastal hike, city walking tour, and Cantonese dim sum experience</li>
+                    <li><strong>High-Speed Train</strong> — cross into Shenzhen on the high speed train</li>
+                  </ul>
+                </div>
               </div>
-              <ul>
-                <li><strong>Welcome Dinner</strong> — expert talk: <em>Why China, Why Now</em>, featuring a China analyst from Gavekal Dragonomics</li>
-                <li><strong>Explore the City</strong> — Dragon's Back coastal hike, city walking tour, and Cantonese dim sum experience</li>
-                <li><strong>High-Speed Train</strong> — cross into Shenzhen on the high speed train</li>
-              </ul>
             </div>
 
-            <div class="itinerary-day">
-              <div class="itinerary-day-head">
+            <div class="itinerary-day" data-open="false">
+              <button class="itinerary-day-trigger" type="button" aria-expanded="false">
                 <h4>Days 4–5 · Shenzhen</h4>
-                <span class="itinerary-day-sub">The Hardware Frontier</span>
+                <svg class="itinerary-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                  <path d="M9 6 L15 12 L9 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="itinerary-day-panel">
+                <div class="itinerary-day-panel-inner">
+                  <span class="itinerary-day-sub">The Hardware Frontier</span>
+                  <ul>
+                    <li><strong>BYD Tour</strong> — walk the EV assembly line at BYD's factory</li>
+                    <li><strong>Hardware Market</strong> — explore the world's largest electronics market in Huaqiangbei and order drone delivery coffee</li>
+                  </ul>
+                </div>
               </div>
-              <ul>
-                <li><strong>BYD Tour</strong> — walk the EV assembly line at BYD's factory</li>
-                <li><strong>Hardware Market</strong> — explore the world's largest electronics market in Huaqiangbei and order drone delivery coffee</li>
-              </ul>
             </div>
 
-            <div class="itinerary-day">
-              <div class="itinerary-day-head">
+            <div class="itinerary-day" data-open="false">
+              <button class="itinerary-day-trigger" type="button" aria-expanded="false">
                 <h4>Days 6–10 · Shanghai</h4>
-                <span class="itinerary-day-sub">The Rise of Applied AI</span>
+                <svg class="itinerary-chevron" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                  <path d="M9 6 L15 12 L9 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="itinerary-day-panel">
+                <div class="itinerary-day-panel-inner">
+                  <span class="itinerary-day-sub">The Rise of Applied AI</span>
+                  <ul>
+                    <li><strong>Unitree Robotics</strong> — visit HQ and interact with humanoid robots up close</li>
+                    <li><strong>SenseTime</strong> — learn how China is building smart cities with AI</li>
+                    <li><strong>Local Food Tour</strong> — noodles, xiaolongbao, and Shanghai street food</li>
+                    <li><strong>Farewell Dinner</strong> — optional night out on Shanghai's clubbing scene</li>
+                  </ul>
+                </div>
               </div>
-              <ul>
-                <li><strong>Unitree Robotics</strong> — visit HQ and interact with humanoid robots up close</li>
-                <li><strong>SenseTime</strong> — learn how China is building smart cities with AI</li>
-                <li><strong>Local Food Tour</strong> — noodles, xiaolongbao, and Shanghai street food</li>
-                <li><strong>Farewell Dinner</strong> — optional night out on Shanghai's clubbing scene</li>
-              </ul>
             </div>
           </div>
         </div>
@@ -193,5 +214,48 @@
       <div class="footer-copy">© 2026 China Tech Tours. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('.itinerary .itinerary-day');
+      if (!items.length) return;
+
+      function setOpen(item, open) {
+        var trigger = item.querySelector('.itinerary-day-trigger');
+        var panel = item.querySelector('.itinerary-day-panel');
+        var inner = panel && panel.querySelector('.itinerary-day-panel-inner');
+        if (!trigger || !panel || !inner) return;
+        if (open) {
+          item.setAttribute('data-open', 'true');
+          trigger.setAttribute('aria-expanded', 'true');
+          panel.style.maxHeight = inner.scrollHeight + 'px';
+        } else {
+          item.setAttribute('data-open', 'false');
+          trigger.setAttribute('aria-expanded', 'false');
+          panel.style.maxHeight = '0';
+        }
+      }
+
+      items.forEach(function (item) {
+        var trigger = item.querySelector('.itinerary-day-trigger');
+        if (!trigger) return;
+        trigger.addEventListener('click', function () {
+          var wasOpen = item.getAttribute('data-open') === 'true';
+          items.forEach(function (other) { setOpen(other, false); });
+          if (!wasOpen) setOpen(item, true);
+        });
+      });
+
+      window.addEventListener('resize', function () {
+        items.forEach(function (item) {
+          if (item.getAttribute('data-open') === 'true') {
+            var panel = item.querySelector('.itinerary-day-panel');
+            var inner = panel && panel.querySelector('.itinerary-day-panel-inner');
+            if (panel && inner) panel.style.maxHeight = inner.scrollHeight + 'px';
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
