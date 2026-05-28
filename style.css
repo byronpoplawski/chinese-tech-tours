@@ -763,18 +763,9 @@ img { max-width: 100%; display: block; }
 }
 
 .about-photo {
-  background: var(--off-white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
   aspect-ratio: 1 / 1;
   max-width: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-size: 0.85rem;
-  text-align: center;
-  padding: 1rem;
+  border-radius: 4px;
   overflow: hidden;
 }
 
