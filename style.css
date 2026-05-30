@@ -1060,7 +1060,7 @@ img { max-width: 100%; display: block; }
 
   .tour-card-flagship .btn {
     margin-top: 2.5rem;
-    align-self: flex-start;
+    align-self: center;
   }
 
   .itinerary-day-trigger h4 {
