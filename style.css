@@ -208,6 +208,14 @@ img { max-width: 100%; display: block; }
   color: var(--muted);
 }
 
+.cta-secondary-link {
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 /* Tags */
 .tag {
   display: inline-block;
