@@ -38,6 +38,7 @@
   <section class="section" style="padding-top: 2.5rem;">
     <div class="container">
       <form
+        id="contactForm"
         class="form"
         name="interest"
         method="POST"
@@ -87,6 +88,59 @@
       <div class="footer-copy">© 2026 China Tech Tours. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var button = form.querySelector('button[type="submit"]');
+        if (button) {
+          button.disabled = true;
+          button.textContent = 'Sending…';
+        }
+
+        var data = new URLSearchParams(new FormData(form)).toString();
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: data
+        })
+          .then(function (response) {
+            if (!response.ok) throw new Error('Submission failed');
+            showThanks();
+          })
+          .catch(function () {
+            if (button) {
+              button.disabled = false;
+              button.textContent = 'Send';
+            }
+            var existing = form.querySelector('.form-error');
+            if (!existing) {
+              var err = document.createElement('p');
+              err.className = 'form-error';
+              err.style.cssText = 'margin-top: 1rem; color: #b91c1c; font-size: 0.9rem;';
+              err.innerHTML = 'Something went wrong sending your message. Please email us directly at <a href="mailto:chinesetechtours@gmail.com">chinesetechtours@gmail.com</a>.';
+              form.appendChild(err);
+            }
+          });
+      });
+
+      function showThanks() {
+        var thanks = document.createElement('div');
+        thanks.className = 'form';
+        thanks.style.textAlign = 'center';
+        thanks.innerHTML =
+          '<h2 style="margin: 0.5rem 0 1rem;">Thanks for your message!</h2>' +
+          '<p style="color: var(--ink-soft); margin: 0;">We\'ll be in touch shortly.</p>';
+        form.replaceWith(thanks);
+      }
+    })();
+  </script>
 
 </body>
 </html>
