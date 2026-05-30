@@ -530,6 +530,7 @@ img { max-width: 100%; display: block; }
 
 .tour-card-flagship .btn {
   margin-top: 0.75rem;
+  border: 2px solid transparent;
 }
 
 /* Featured tour (home) */
@@ -1026,9 +1027,10 @@ img { max-width: 100%; display: block; }
 
   .btn-secondary {
     display: block;
-    width: fit-content;
-    max-width: 100%;
+    width: 100%;
+    max-width: 340px;
     margin: 0 auto;
+    font-size: 0.95rem;
   }
 
   /* Tour cards */
@@ -1062,6 +1064,8 @@ img { max-width: 100%; display: block; }
   .tour-card-flagship .btn {
     margin-top: 2.5rem;
     align-self: center;
+    width: 100%;
+    max-width: 340px;
   }
 
   .itinerary-day-trigger h4 {
