@@ -201,6 +201,13 @@ img { max-width: 100%; display: block; }
   color: #fff;
 }
 
+.cta-subtext {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
 /* Tags */
 .tag {
   display: inline-block;
