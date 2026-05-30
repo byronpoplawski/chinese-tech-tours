@@ -157,12 +157,36 @@ img { max-width: 100%; display: block; }
   margin: 2rem 0;
 }
 
-.hero-photo img {
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.hero-grid img {
   display: block;
   width: 100%;
-  height: 50vh;
+  height: 560px;
   object-fit: cover;
   object-position: center;
+}
+
+.hero-photo-mobile {
+  display: none;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    display: none;
+  }
+
+  .hero-photo-mobile {
+    display: block;
+  }
 }
 
 /* Buttons */
@@ -993,14 +1017,17 @@ img { max-width: 100%; display: block; }
     margin: 2.5rem 0;
   }
 
-  .hero-photo img {
-    height: 60vh;
-  }
-
   /* Buttons — auto width on desktop */
   .btn {
     width: auto;
     font-size: 0.95rem;
+  }
+
+  .btn-secondary {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   /* Tour cards */
