@@ -243,6 +243,8 @@
         });
       });
 
+      setOpen(items[0], true);
+
       window.addEventListener('resize', function () {
         items.forEach(function (item) {
           if (item.getAttribute('data-open') === 'true') {
