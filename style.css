@@ -462,11 +462,14 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   align-items: baseline;
   padding: 0.65rem 0;
-  border-bottom: 1px solid var(--border);
 }
 
 .departure-dates-list li:first-child {
   border-top: 1px solid var(--border);
+}
+
+.departure-dates-list li:last-child {
+  border-bottom: 1px solid var(--border);
 }
 
 .departure-range {
