@@ -354,6 +354,7 @@ img { max-width: 100%; display: block; }
 
 .tour-section--no-border {
   border-top: 1px solid var(--border);
+  margin-bottom: -1rem;
 }
 
 .tour-meta + .tour-section {
