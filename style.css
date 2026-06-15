@@ -352,6 +352,10 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid var(--border);
 }
 
+.tour-section--no-border {
+  border-top: none;
+}
+
 .tour-meta + .tour-section {
   margin-top: 0;
   padding-top: 0;
@@ -464,13 +468,6 @@ img { max-width: 100%; display: block; }
   padding: 0.65rem 0;
 }
 
-.departure-dates-list li:first-child {
-  border-top: 1px solid var(--border);
-}
-
-.departure-dates-list li:last-child {
-  border-bottom: 1px solid var(--border);
-}
 
 .departure-range {
   font-size: 0.95rem;
