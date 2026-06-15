@@ -448,6 +448,37 @@ img { max-width: 100%; display: block; }
   margin: 0;
 }
 
+.departure-dates-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.departure-dates-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.departure-dates-list li:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.departure-range {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.departure-sfo {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 .itinerary-day ul li,
 .include-col ul li {
   position: relative;
