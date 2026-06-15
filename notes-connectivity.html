@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The VPN and eSIM setup we recommend for tour participants — China Tech Tours</title>
+  <meta name="description" content="Get your phone working before you land. The eSIM that works inside mainland China, plus a VPN setup that doesn't make you fight with it every morning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">China Tech Tours</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="travel-notes.html" class="active">Travel Notes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 2.5rem;">
+    <div class="container">
+      <a href="travel-notes.html" class="article-back">← Travel Notes</a>
+
+      <div class="article-header">
+        <div class="note-meta">
+          <span>March 18, 2026</span><span>Connectivity</span>
+        </div>
+        <h1>The VPN and eSIM setup we recommend for tour participants</h1>
+        <p class="article-subtitle">Get your phone working before you land. The eSIM that works inside mainland China, plus a VPN setup that doesn't make you fight with it every morning.</p>
+      </div>
+
+      <div class="article-body">
+        <h2>Why you need both</h2>
+        <p>Two separate problems, two separate solutions. An eSIM gives you a data connection inside mainland China — your U.S. carrier plan almost certainly won't work on Chinese networks, and even if it does, it'll be slow and expensive. A VPN lets you access the open internet from that connection — Google, Gmail, Instagram, WhatsApp, and most Western apps are blocked in mainland China without one.</p>
+        <p>Hong Kong is an exception: it has its own telecom infrastructure and no firewall. Your U.S. plan may roam there normally, and no VPN is needed. The moment you cross into Shenzhen, the firewall kicks in.</p>
+
+        <h2>eSIM recommendations</h2>
+        <p>Not all travel eSIMs work inside mainland China. Many route through Hong Kong towers even when you're physically in Shenzhen or Shanghai, which means poor signal or no data at all in buildings and metros. The ones that actually connect to mainland Chinese networks:</p>
+        <ul>
+          <li><strong>Airalo — China Unicom plan:</strong> The most widely used option among our participants. Buy through the Airalo app before departure, install the eSIM to your phone, and activate it when you land. Runs on China Unicom's network, which has solid coverage across all three cities. Pricing runs around $15–$20 for 10GB over 30 days.</li>
+          <li><strong>China Unicom International eSIM:</strong> Available directly from China Unicom's international site. Slightly more setup friction but reliable. Good if you want to buy more data upfront.</li>
+          <li><strong>Avoid generic "Asia" eSIM bundles</strong> that don't specify the underlying Chinese carrier. Most route around the mainland network and give you frustrating coverage.</li>
+        </ul>
+        <p>Make sure your phone supports eSIM before buying — most iPhones from XS onward and recent Android flagships do. Install the eSIM before you leave; some providers block installation from Chinese IP addresses.</p>
+
+        <h2>VPN recommendations</h2>
+        <p>The VPN landscape in China shifts constantly. Services that worked fine a year ago sometimes stop working with no warning. Based on what's worked reliably for our groups:</p>
+        <ul>
+          <li><strong>ExpressVPN:</strong> Consistently the most reliable in our experience. Has China-specific obfuscation built in ("Lightway" protocol). Expensive at ~$10/month, but it works when cheaper options don't.</li>
+          <li><strong>Astrill:</strong> Slightly more technical to configure but extremely reliable. Popular with expats in China for a reason. The StealthVPN protocol is specifically designed to avoid Chinese detection.</li>
+          <li><strong>Mullvad and NordVPN:</strong> Work some of the time, but less consistently than the two above. Fine as a backup, not as a primary.</li>
+        </ul>
+        <p>Free VPNs do not work reliably in China. Don't rely on one for a trip like this.</p>
+
+        <h2>The setup order matters</h2>
+        <p>This is the mistake most people make: they land, connect to Chinese Wi-Fi or their new eSIM, and then try to download or set up a VPN. You can't — the VPN provider's website is likely blocked from inside China, and app stores may not surface the app correctly.</p>
+        <p>Do everything before you board your flight:</p>
+        <ol>
+          <li>Subscribe to your VPN and install the app.</li>
+          <li>Open the app and connect at least once from home to confirm it works.</li>
+          <li>Download the eSIM profile and install it (keep it inactive until you land).</li>
+          <li>On the plane or in Hong Kong (before crossing to mainland), activate the eSIM and connect the VPN.</li>
+        </ol>
+
+        <h2>Day-to-day use</h2>
+        <p>Keep the VPN running in the background. Some apps (WeChat, Alipay, Chinese maps) actually work better with the VPN off — toggle it off for those and back on for everything else. ExpressVPN and Astrill both have quick-toggle widgets for your home screen that make this easy.</p>
+        <p>Hotel Wi-Fi in China is usable but slow, and the VPN adds latency. For video calls, switch to your eSIM data instead — it's faster for most use cases.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">China Tech Tours</div>
+          <p class="footer-tag">Small-group tours for tech-curious travelers.</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:chinesetechtours@gmail.com">chinesetechtours@gmail.com</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 China Tech Tours. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
